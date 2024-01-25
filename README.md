@@ -1,2 +1,3 @@
-# news_app_clean_arch
-News app to learn clean architecture
+# news_app_clean_arch2
+
+A new Flutter project.
