@@ -6,10 +6,12 @@ import 'package:news_app_clean_arch2/config/constants/constants.dart';
 import 'package:news_app_clean_arch2/core/resources/data_state.dart';
 import 'package:news_app_clean_arch2/features/daily_news/data/data_sources/remote/news_api_service.dart';
 import 'package:news_app_clean_arch2/features/daily_news/data/models/article.dart';
+import 'package:news_app_clean_arch2/features/daily_news/domain/entities/article.dart';
 import 'package:news_app_clean_arch2/features/daily_news/domain/repository/article_repository.dart';
 
 class ArticleRepositoryImpl implements ArticleRepository {
   final NewsApiService _newsApiService;
+
   ArticleRepositoryImpl(this._newsApiService);
 
   @override
@@ -33,5 +35,20 @@ class ArticleRepositoryImpl implements ArticleRepository {
     } on DioException catch (e) {
       return DataFailed(e);
     }
+  }
+
+  @override
+  Future<List<ArticleModel>> getSavedArticles() async {
+    return <ArticleModel>[];
+  }
+
+  @override
+  Future<void> removeArticle(ArticleEntity article) async {
+    print('object');
+  }
+
+  @override
+  Future<void> saveArticle(ArticleEntity article) async {
+    print('object');
   }
 }

@@ -3,4 +3,11 @@ import 'package:news_app_clean_arch2/features/daily_news/domain/entities/article
 
 abstract class ArticleRepository {
   Future<DataState<List<ArticleEntity>>> getNewsArticles();
+
+  // Database methods
+  Future<List<ArticleEntity>> getSavedArticles();
+
+  Future<void> saveArticle(ArticleEntity article);
+
+  Future<void> removeArticle(ArticleEntity article);
 }
