@@ -16,7 +16,7 @@ class RemoteArticlesBloc
   void onGetArticles(
       GetArticles event, Emitter<RemoteArticlesState> emit) async {
     final dataState = await _getArticleUseCase();
-    if (dataState.data is DataSuccess && dataState.data!.isNotEmpty) {
+    if (dataState is DataSuccess && dataState.data!.isNotEmpty) {
       emit(
         RemoteArticleDone(dataState.data!),
       );
